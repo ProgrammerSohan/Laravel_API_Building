@@ -4,6 +4,7 @@
 namespace App\Services\Geolocation;
 
 
+use App\Services\Map\Map;
 use App\Services\Satellite\Satellite;
 
 class Geolocation
@@ -27,8 +28,25 @@ class Geolocation
 
     public function search(string $name)
     {
+        // ...
+        $locationInfo = $this->map->findAddress($name);
 
+        return $this->satellite->pinpoint($locationInfo);
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
