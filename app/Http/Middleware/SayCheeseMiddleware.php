@@ -17,12 +17,29 @@ class SayCheeseMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        dump("HEY CHEESEE");
+       // dump("HEY CHEESEE");
      return $next($request);
-       /* return new JsonResponse([
+   /*  return new JsonResponse([
             'data' => 'cheesee',
 
         ]);*/
 
     }
+
+    public function terminate($request, $response)
+    {
+        dump('BYEE');
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
