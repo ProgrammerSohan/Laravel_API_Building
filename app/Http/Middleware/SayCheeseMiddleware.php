@@ -18,11 +18,11 @@ class SayCheeseMiddleware
     public function handle(Request $request, Closure $next)
     {
         dump("HEY CHEESEE");
-        //return $next($request);
-        return new JsonResponse([
+     return $next($request);
+       /* return new JsonResponse([
             'data' => 'cheesee',
 
-        ]);
+        ]);*/
 
     }
 }
