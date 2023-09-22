@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class SayCheeseMiddleware
 {
@@ -17,6 +18,11 @@ class SayCheeseMiddleware
     public function handle(Request $request, Closure $next)
     {
         dump("HEY CHEESEE");
-        return $next($request);
+        //return $next($request);
+        return new JsonResponse([
+            'data' => 'cheesee',
+
+        ]);
+
     }
 }
